@@ -8,6 +8,13 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "./src/lib/scss/global/index.scss";`,
+      },
+    },
+  },
   cacheDir: '../../node_modules/.vite/libs/shared-ui',
   plugins: [
     react(),

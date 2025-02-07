@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import * as ReactDOM from 'react-dom/client';
 import App from './app/app';
 
+import Button from '@codechip/shared-ui/Button'
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -1,0 +1,17 @@
+
+/*
+*KEY NOTE: DO NOT USE IMPORT ANYWHERE IN PROJECT IN SCSS FILES
+*ALWAYS USE `@USE` AND `@FORWARD` AS PER NEW RULES OF SCSS FILES
+*Global rule for scalable management of Design System:
+*Rule 1:
+*from 100 shade to 30 use for badges, tags Bg colors
+*from 80 to 100 use as text with light bg with tags and badges
+*Rule2:
+*For shade 60 as main color, shade 70, on hover, shade 80 on click/focus/active
+*Rule 3: must include index.scss in each file of DS components
+*Rule 4: Always import each file of inside  _index of it's corresponding folder
+*Rule 5: Then import _index in root.scss
+*/
+
+
+@use './ds_components/index';

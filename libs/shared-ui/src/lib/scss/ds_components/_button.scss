@@ -1,0 +1,6 @@
+// must include index.scss in each file of DS components
+@use '../index' as *  ;
+
+.btn {
+    background-color: $neutral-80;
+}

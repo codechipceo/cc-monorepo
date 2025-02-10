@@ -49,11 +49,12 @@ export default defineConfig({
     watch: false,
     globals: true,
     environment: 'jsdom',
+    setupFiles: './src/setupTests.ts', // Add this line
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../coverage/libs/shared-ui',
       provider: 'v8',
     },
-  },
+  },  
 });

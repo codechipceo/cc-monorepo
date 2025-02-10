@@ -1,0 +1,55 @@
+@use '../index' as *;
+
+$default-theme: map-get($themes, "default"); // Extract "default" theme colors
+$primary-60: map-get($default-theme, "primary-60"); // Get the primary-60 value
+
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 8px;
+    user-select: none;
+  
+    input {
+      display: none;
+    }
+  
+    .checkmark {
+      width: 18px;
+      height: 18px;
+      border: 2px solid $neutral-60;
+      display: inline-block;
+      border-radius: 4px;
+      position: relative;
+    }
+  
+    input:checked + .checkmark {
+      background-color: $primary-60;
+      border-color: $primary-60;
+    }
+  
+    input:checked + .checkmark::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  
+    .label {
+      font-size: 16px;
+      color: #333;
+    }
+  
+    input:disabled + .checkmark {
+      background-color: #ddd;
+      border-color: #ccc;
+    }
+  }
+  

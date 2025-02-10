@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "outDir": ""
+    "outDir": "",
+    "declaration": true,
+    "composite": true,
   },
   "exclude": [
     "src/**/*.spec.ts",
@@ -21,7 +23,8 @@
     "src/**/*.stories.tsx",
     "src/**/*.stories.mdx",
     ".storybook/*.js",
-    ".storybook/*.ts"
+    ".storybook/*.ts",
+    "src/**/*.tsx"
   ],
   "files": [
     "../../node_modules/@nx/react/typings/styled-jsx.d.ts",

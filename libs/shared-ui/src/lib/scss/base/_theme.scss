@@ -38,31 +38,41 @@ $themes: (
 );
 
 
-:root {
-  @each $theme, $colors in $themes {
-    [data-theme="#{$theme}"] {
-      @each $key, $value in $colors {
-        --#{$key}: #{$value};
-      }
-    }
-  }
-}
+// :root {
+//   @each $theme, $colors in $themes {
+//     [data-theme="#{$theme}"] {
+//       @each $key, $value in $colors {
+//         --#{$key}: #{$value};
+//       }
+//     }
+//   }
+// }
 
-// Use a mixin to avoid repeating the same variable names
-@mixin define-color-variables($prefix) {
-  $primary-10: var(--#{$prefix}-10);
-  $primary-20: var(--#{$prefix}-20);
-  $primary-30: var(--#{$prefix}-30);
-  $primary-40: var(--#{$prefix}-40);
-  $primary-50: var(--#{$prefix}-50);
-  $primary-60: var(--#{$prefix}-60);
-  $primary-70: var(--#{$prefix}-70);
-  $primary-80: var(--#{$prefix}-80);
-  $primary-90: var(--#{$prefix}-90);
-  $primary-100: var(--#{$prefix}-100);
-}
+// // Use a mixin to avoid repeating the same variable names
+// @mixin define-color-variables($prefix) {
+//   $primary-10: var(--#{$prefix}-10);
+//   $primary-20: var(--#{$prefix}-20);
+//   $primary-30: var(--#{$prefix}-30);
+//   $primary-40: var(--#{$prefix}-40);
+//   $primary-50: var(--#{$prefix}-50);
+//   $primary-60: var(--#{$prefix}-60);
+//   $primary-70: var(--#{$prefix}-70);
+//   $primary-80: var(--#{$prefix}-80);
+//   $primary-90: var(--#{$prefix}-90);
+//   $primary-100: var(--#{$prefix}-100);
+// }
 
-// @include define-color-variables(primary);
+$primary-10: #f4ebff;
+$primary-20: #e9d7fe;
+$primary-30: #d6bbfb;
+$primary-40: #b692f6;
+$primary-50: #9e77ed;
+$primary-60: #7f56d9; // Main color
+$primary-70: #6941c6;
+$primary-80: #53389e;
+$primary-90: #42307d;
+$primary-100: #2c1c5f;
+
 // Destructive/Errors Colors
 $destructive-10: #fee4e2;
 $destructive-20: #fecdca;

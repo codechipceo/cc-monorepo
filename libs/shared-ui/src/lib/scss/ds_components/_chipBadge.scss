@@ -1,0 +1,53 @@
+@use '../index' as *;
+
+.chipBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  border: 2px solid;
+
+  &.badge, &.chip {
+    &.primary {
+      color: $primary-60; // Main text color
+      background-color: $primary-20; // Light background
+      border-color: $primary-40; // Slightly deeper border
+    }
+
+    &.destructive {
+      color: $destructive-60;
+      background-color: $destructive-20;
+      border-color: $destructive-40;
+    }
+
+    &.success {
+      color: $success-60;
+      background-color: $success-20;
+      border-color: $success-40;
+    }
+
+    &.warning {
+      color: $warning-60;
+      background-color: $warning-20;
+      border-color: $warning-40;
+    }
+
+    &.neutral {
+      color: $neutral-60;
+      background-color: $neutral-20;
+      border-color: $neutral-40;
+    }
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    margin-left: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: inherit;
+  }
+}

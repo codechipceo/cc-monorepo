@@ -4,3 +4,30 @@
 .btn {
     background-color: $neutral-80;
 }
+
+// Button Size Class
+.button-size-sm{
+    width: 154px;
+    height: 36px;
+    border-radius: 8px;
+}
+.button-size-md{
+    width: 158px;
+    height: 40px;
+    border-radius: 8px;
+}
+.button-size-lg{
+    width: 177px;
+    height: 44px;
+    border-radius: 8px;
+}
+.button-size-xl{
+    width: 181px;
+    height: 48px;
+    border-radius: 8px;
+}
+.button-size-2xl{
+    width: 212px;
+    height: 60px;
+    border-radius: 10px;
+}

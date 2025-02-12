@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import ChipBadge from './ChipBadge';
+import ChipBadge from './Tags';
 
 describe('ChipBadge Component', () => {
   it('renders correctly with badge variant', () => {

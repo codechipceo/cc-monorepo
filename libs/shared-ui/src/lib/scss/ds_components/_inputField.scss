@@ -1,0 +1,65 @@
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  .inputLabel {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #5f6368;
+  }
+
+  .inputField, .textareaField {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 2px solid #c4c4c4;
+    transition: border-color 0.2s ease-in-out;
+
+    &:focus {
+      border-color: #1976d2;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+    }
+  }
+
+  .textareaField {
+    resize: vertical;
+  }
+
+  /* ✅ Adjust height for textarea in all size cases */
+  &.size-2xl { width: 100%; height: 70px; }
+  &.size-xl { width: 80%; height: 65px; }
+  &.size-lg { width: 60%; height: 60px; }
+  &.size-md { width: 50%; height: 55px; }
+  &.size-sm { width: 40%; height: 50px; }
+  &.size-xs { width: 30%; height: 45px; }
+
+  .textareaField {
+    height: auto;
+    min-height: 120px;
+
+    &.size-2xl { min-height: 200px; }
+    &.size-xl { min-height: 180px; }
+    &.size-lg { min-height: 160px; }
+    &.size-md { min-height: 140px; }
+    &.size-sm { min-height: 120px; }
+    &.size-xs { min-height: 100px; }
+  }
+
+  &.error {
+    .inputField, .textareaField {
+      border-color: #d32f2f;
+    }
+
+    .errorMessage {
+      color: #d32f2f;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+}

@@ -1,40 +1,104 @@
-import { StoryFn, Meta } from '@storybook/react';
-import Typography from './Typography-ui';
+import { Meta, StoryObj } from '@storybook/react';
+import Typography from './Typography';
 import { TypographyProps } from './Typography.types';
 
-export default {
-  title: 'Shared UI/Typography',
+const meta: Meta<typeof Typography> = {
+  title: 'Components/Typography',
   component: Typography,
   argTypes: {
     variant: {
       control: 'select',
       options: [
-        'display2xl', 'displayxl', 'displaylg', 'displaymd', 'displaysm', 'displayxs',
-        'textxl', 'textlg', 'textmd', 'textsm', 'textxs', 'label'
+        'display-2xl',
+        'display-xl',
+        'display-lg',
+        'display-md',
+        'display-sm',
+        'display-xs',
+        'xl',
+        'lg',
+        'md',
+        'sm',
+        'xs',
       ],
     },
-    color: { control: 'color' },
-    align: { control: 'radio', options: ['left', 'center', 'right'] },
-    weight: { control: 'radio', options: ['normal', 'medium', 'semibold', 'bold'] },
+    weight: {
+      control: 'select',
+      options: ['light', 'regular', 'medium', 'semibold', 'bold'],
+    },
+    align: {
+      control: 'select',
+      options: ['left', 'center', 'right'],
+    },
+    transform: {
+      control: 'select',
+      options: ['uppercase', 'lowercase', 'capitalize'],
+    },
+    as: {
+      control: 'select',
+      options: [
+        'p',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'span',
+        'strong',
+        'em',
+        'div',
+      ],
+    },
+    addClass: { control: 'text' },
+    children: { control: 'text', defaultValue: 'Sample Typography Text' },
   },
-} as Meta<typeof Typography>;
-
-const Template: StoryFn<TypographyProps> = (args) => <Typography {...args} />;
-
-export const Heading = Template.bind({});
-Heading.args = {
-  children: 'Heading Text',
-  variant: 'display2xl',
-  color: '#333',
-  align: 'center',
-  weight: 'bold',
 };
 
-export const Body = Template.bind({});
-Body.args = {
-  children: 'Body Text',
-  variant: 'textmd',
-  color: '#666',
-  align: 'left',
-  weight: 'normal',
+export default meta;
+type Story = StoryObj<typeof Typography>;
+
+
+export const Playground: Story = {
+  args: {
+    variant: 'md',
+    weight: 'regular',
+    align: 'left',
+    transform: undefined,
+    as: 'p',
+    children: ' The quick brown fox jumps over the lazy dog',
+  },
+};
+
+export const AllSizes = () => {
+ const variants: TypographyProps['variant'][] = [
+   'display-2xl',
+   'display-xl',
+   'display-lg',
+   'display-md',
+   'display-sm',
+   'display-xs',
+   'xl',
+   'lg',
+   'md',
+   'sm',
+   'xs',
+ ];
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        padding: '2rem',
+      }}
+    >
+      {variants.map((variant) => (
+        <Typography key={variant} variant={variant} weight="bold">
+          The quick brown fox jumps over the lazy dog
+        </Typography>
+      ))}
+    </div>
+  );
 };

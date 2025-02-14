@@ -1,0 +1,95 @@
+@use '../index' as * ;
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border: none;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &--small {
+    width: 32px;
+    height: 16px;
+  }
+
+  &--medium {
+    width: 36px;
+    height: 20px;
+  }
+
+
+  &--primary {
+    background-color: #ccc;
+
+    &.toggle-button--checked {
+      background-color: $primary-60;
+    }
+  }
+
+  &--success {
+    background-color: #ccc;
+
+    &.toggle-button--checked {
+      background-color: $success-60;
+    }
+  }
+
+  &--neutral {
+    background-color: #ccc;
+
+    &.toggle-button--checked {
+      background-color: $neutral-60;
+    }
+  }
+
+  &--warning {
+    background-color: #ccc;
+
+    &.toggle-button--checked {
+      background-color: $warning-60;
+    }
+  }
+
+  &--destructive {
+    background-color: #ccc;
+
+    &.toggle-button--checked {
+      background-color: $destructive-60;
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+
+    &--checked {
+      transform: translateX(15px);
+    }
+  }
+
+  &--small &__thumb {
+    width: 12px;
+    height: 12px;
+
+    &--checked {
+      transform: translateX(15px);
+    }
+  }
+
+  &--large &__thumb {
+    width: 24px;
+    height: 24px;
+
+    &--checked {
+      transform: translateX(15px);
+    }
+  }
+}

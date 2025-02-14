@@ -1,0 +1,49 @@
+@use '../index' as *;
+
+.toggle{ 
+    display: flex;
+    width:60px;
+    height: 32px;
+    border-radius: 30px;
+    background-color: $primary-30;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.toggle:hover{
+    border:1px solid $primary-70;
+}
+.toggle::after{
+    content: "";
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: .1rem;
+    left: .1rem;
+    cursor: pointer;
+border-radius: 20px;
+    background-color: $primary-10;
+transition: transform 0.3s ease;
+transform: translateX(0);
+border: $primary-40;}
+
+
+
+.toggle.active{
+background-color:$primary-50 ;
+    cursor: pointer;
+}
+.toggle.active:hover{
+    border:1px solid $primary-70;
+}
+.toggle.active::after{
+transform: translateX(28px);
+
+}
+.toggle.disabled{
+    background-color: $neutral-30;
+    cursor: not-allowed;
+    border: none;
+}

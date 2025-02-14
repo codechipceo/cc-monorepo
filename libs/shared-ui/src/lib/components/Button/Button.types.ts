@@ -26,14 +26,16 @@ export enum ButtonShape {
 }
 
 export interface ButtonProps {
-    type?: ButtonType;
-    variant?: ButtonVariant;
-    size?: ButtonSize;
-    shape?: ButtonShape;
-    disabled?: boolean;
-    isLoading?: boolean;
-    addClass?: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
-    children: React.ReactNode;
-    btnType:'button' |'submit';
+  type?: ButtonType;
+  isIcon?: boolean;
+  icon?: React.ReactNode;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  shape?: ButtonShape;
+  disabled?: boolean;
+  isLoading?: boolean;
+  addClass?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  children: React.ReactNode;
+  btnType: 'button' | 'submit';
 }

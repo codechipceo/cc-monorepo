@@ -6,7 +6,7 @@ button {
   border: none;
 
 }
-button:hover{
+button:hover, button:active{
   cursor: pointer;
 }
 button:disabled{
@@ -53,34 +53,80 @@ button:disabled{
 
   &--circle {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    &--small{
+      width: 32px;
+      height: 32px;
+      padding: 0;
+    }
+     &--medium{
+      width: 40px;
+      padding: 0;
+      height: 40px;
+    }
+        &--large{
+
+          width: 46px;
+          padding: 0;
+          height: 46px;
+
+    }
+
   }
 
   &__solid {
     &.DS__btn--neutral {
       background-color: $neutral-60;
       color: white;
+      &:hover {
+        background-color: $neutral-70;
+      }
+      &:active {
+        background-color: $neutral-80;
+      }
     }
     &.DS__btn--primary {
       background-color: $primary-60;
       color: white;
+      &:hover {
+        background-color: $primary-70;
+      }
+      &:active {
+        background-color: $primary-80;
+      }
     }
     &.DS__btn--success {
       background-color: $success-60;
       color: white;
+      &:hover {
+        background-color: $success-70;
+      }
+      &:active {
+        background-color: $success-80;
+      }
     }
     &.DS__btn--warning {
       background-color: $warning-60;
       color: white;
+      &:hover {
+        background-color: $warning-70;
+      }
+      &:active {
+        background-color: $warning-80;
+      }
     }
     &.DS__btn--destructive {
       background-color: $destructive-60;
       color: white;
+      &:hover {
+        background-color: $destructive-70;
+      }
+      &:active {
+        background-color: $destructive-80;
+      }
     }
   }
 
@@ -89,18 +135,48 @@ button:disabled{
     border: none;
     &.DS__btn--neutral {
       color: $neutral-60;
+      &:hover {
+        background-color: $neutral-30;
+      }
+      &:active {
+        background-color: $neutral-40;
+      }
     }
     &.DS__btn--primary {
       color: $primary-60;
+      &:hover {
+        background-color: $primary-30;
+      }
+      &:active {
+        background-color: $primary-40;
+      }
     }
     &.DS__btn--success {
       color: $success-60;
+      &:hover {
+        background-color: $success-30;
+      }
+      &:active {
+        background-color: $success-40;
+      }
     }
     &.DS__btn--warning {
       color: $warning-60;
+      &:hover {
+        background-color: $warning-30;
+      }
+      &:active {
+        background-color: $warning-40;
+      }
     }
     &.DS__btn--destructive {
       color: $destructive-60;
+      &:hover {
+        background-color: $destructive-30;
+      }
+      &:active {
+        background-color: $destructive-40;
+      }
     }
   }
 
@@ -150,3 +226,41 @@ button:disabled{
     }
   }
 }
+
+
+.DS__btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+}
+
+.DS__btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.DS__btn__loader {
+  display: inline-block;
+  width: 1em; /* Adjust based on button size */
+  height: 1em;
+  border: 2px solid currentColor; /* Uses button text color */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: DS__spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes DS__spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+

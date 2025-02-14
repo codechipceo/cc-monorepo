@@ -35,13 +35,15 @@ const buttonProperties: Record<ButtonType, Record<ButtonVariant, string>> = {
 }
 
 const Button: React.FC<ButtonProps> = ({
+  isIcon = false,
   variant = ButtonVariant.PRIMARY,
   type = ButtonType.SOLID,
-  size = ButtonShape.ROUNDED,
-  shape = ButtonSize.MEDIUM,
+  size = ButtonSize.SMALL,
+  shape = ButtonShape.ROUNDED,
   isLoading = false,
   disabled = false,
   addClass,
+  icon,
   onClick,
   children,
   ...props
@@ -53,6 +55,9 @@ const Button: React.FC<ButtonProps> = ({
     `DS__btn DS__btn--${size}`,
     `DS__btn--${shape}`,
     {
+      'DS__btn--circle--small' : isIcon === true  && ButtonSize.SMALL === size,
+      'DS__btn--circle--medium' : isIcon === true  && ButtonSize.MEDIUM === size,
+      'DS__btn--circle--large' : isIcon === true  && ButtonSize.LARGE === size,
       'DS__btn--loading': isLoading,
       'DS__btn--disabled': disabled || isLoading,
       [buttonProperties[type][variant]]: true,
@@ -65,13 +70,27 @@ const Button: React.FC<ButtonProps> = ({
       onClick(event);
     }
   }
+  if (isIcon && !icon) {
+    return 'Please pass svg Icon if isIcon is true'
+  }
   return (
-    <div className={buttonClass}>
-      <button onClick={handleClickWrapper} disabled={disabled || isLoading} {...props}>
-        {children}
+    <div className={''}>
+      <button
+        onClick={handleClickWrapper}
+        className={buttonClass}
+        disabled={disabled || isLoading}
+        {...props}
+      >
+        {' '}
+        {isLoading ? (
+          <span className="DS__btn__loader"></span>
+        ) : isIcon && icon ? (
+          <span className="DS__btn__icon">{icon}</span>
+        ) : (
+          children
+        )}
       </button>
-
-   </div>
+    </div>
   );
 };
 

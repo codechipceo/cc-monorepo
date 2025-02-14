@@ -1,37 +1,62 @@
-import React, { useState } from "react";
-import { StoryFn, Meta } from "@storybook/react";
-import ToggleButton from "./ToggleButton-ui";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import ToggleButton, { ToggleButtonProps } from './ToggleButton';
 
-export default{
-    title:"Component/ToggleButton",
-    component:ToggleButton,
-    argTypes:{
-        Active:{control:Boolean},
-        disabled:{control:Boolean},
-        onClick:{action:"clicked"}
-    }    
-} as Meta<typeof ToggleButton>;
-const Template :StoryFn<typeof ToggleButton> = (args)=>{
-    const [isActive, setisActive] = useState(args.Active)
-return(
-    <ToggleButton {...args}
-    Active={isActive}
-    onClick={()=>setisActive((prev)=> !prev)}
-    
-    />
-)
-}
-export const Default =Template.bind({});
-Default.args={
-    Active:true,
-    disabled:false
-}
-export const ActiveState=Template.bind({})
-ActiveState.args={
-    Active:true,
-}
-export const Disabled =Template.bind({});
-Disabled.args={
-    Active:true,
-    disabled:true
-}
+export default {
+  title: 'Components/ToggleButton',
+  component: ToggleButton,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: ['primary', 'success', 'neutral', 'warning', 'destructive'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium'],
+      },
+    },
+    defaultChecked: {
+      control: 'boolean',
+    },
+  },
+} as Meta;
+
+const Template: Story<ToggleButtonProps> = (args) => <ToggleButton {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  variant: 'primary',
+  size: 'medium',
+  defaultChecked: false,
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  variant: 'success',
+  size: 'medium',
+  defaultChecked: false,
+};
+
+export const Neutral = Template.bind({});
+Neutral.args = {
+  variant: 'neutral',
+  size: 'medium',
+  defaultChecked: false,
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  variant: 'warning',
+  size: 'medium',
+  defaultChecked: false,
+};
+
+export const Destructive = Template.bind({});
+Destructive.args = {
+  variant: 'destructive',
+  size: 'medium',
+  defaultChecked: false,
+};

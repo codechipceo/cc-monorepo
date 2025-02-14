@@ -1,5 +1,5 @@
 import {describe,it,expect,vi} from 'vitest';
-import ToggleButton from './ToggleButton-ui';
+import ToggleButton from './ToggleButton';
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("ToggleButton Component", () => {
@@ -7,17 +7,17 @@ describe("ToggleButton Component", () => {
      render(<ToggleButton  Active={false} disabled={false}/>);
       const button = screen.getByRole("button");
       expect(button).toBeInTheDocument() // Initially should NOT be active
- 
+
 
 });
 
     it("renders active the toggle button", () => {
         render(<ToggleButton  Active={false} />);
         const button = screen.getByRole("button");
-     
-       
+
+
       fireEvent.click(button); // Simulate click event
-  
+
       expect(button).toHaveClass("active");
 
 })

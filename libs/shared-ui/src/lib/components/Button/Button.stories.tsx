@@ -9,7 +9,7 @@ import {
 
 // Define metadata for Storybook
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'Shared Ui/Button',
   component: Button,
   argTypes: {
     variant: { control: 'select', options: Object.values(ButtonVariant) },

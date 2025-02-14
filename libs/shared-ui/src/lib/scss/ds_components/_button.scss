@@ -1,6 +1,266 @@
 // must include index.scss in each file of DS components
 @use '../index' as *  ;
 
-.btn {
-    background-color: $neutral-80;
+button {
+  background: transparent;
+  border: none;
+
 }
+button:hover, button:active{
+  cursor: pointer;
+}
+button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.DS__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+   // Sizes
+  &--small {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  &--medium {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  &--large {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  // Shapes
+  &--rounded {
+    border-radius: 8px;
+  }
+
+  &--elipse {
+    border-radius: 9999px;
+  }
+
+  &--rectangle {
+    border-radius: 0px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--small{
+      width: 32px;
+      height: 32px;
+      padding: 0;
+    }
+     &--medium{
+      width: 40px;
+      padding: 0;
+      height: 40px;
+    }
+        &--large{
+
+          width: 46px;
+          padding: 0;
+          height: 46px;
+
+    }
+
+  }
+
+  &__solid {
+    &.DS__btn--neutral {
+      background-color: $neutral-60;
+      color: white;
+      &:hover {
+        background-color: $neutral-70;
+      }
+      &:active {
+        background-color: $neutral-80;
+      }
+    }
+    &.DS__btn--primary {
+      background-color: $primary-60;
+      color: white;
+      &:hover {
+        background-color: $primary-70;
+      }
+      &:active {
+        background-color: $primary-80;
+      }
+    }
+    &.DS__btn--success {
+      background-color: $success-60;
+      color: white;
+      &:hover {
+        background-color: $success-70;
+      }
+      &:active {
+        background-color: $success-80;
+      }
+    }
+    &.DS__btn--warning {
+      background-color: $warning-60;
+      color: white;
+      &:hover {
+        background-color: $warning-70;
+      }
+      &:active {
+        background-color: $warning-80;
+      }
+    }
+    &.DS__btn--destructive {
+      background-color: $destructive-60;
+      color: white;
+      &:hover {
+        background-color: $destructive-70;
+      }
+      &:active {
+        background-color: $destructive-80;
+      }
+    }
+  }
+
+  &__ghost {
+    background-color: transparent;
+    border: none;
+    &.DS__btn--neutral {
+      color: $neutral-60;
+      &:hover {
+        background-color: $neutral-30;
+      }
+      &:active {
+        background-color: $neutral-40;
+      }
+    }
+    &.DS__btn--primary {
+      color: $primary-60;
+      &:hover {
+        background-color: $primary-30;
+      }
+      &:active {
+        background-color: $primary-40;
+      }
+    }
+    &.DS__btn--success {
+      color: $success-60;
+      &:hover {
+        background-color: $success-30;
+      }
+      &:active {
+        background-color: $success-40;
+      }
+    }
+    &.DS__btn--warning {
+      color: $warning-60;
+      &:hover {
+        background-color: $warning-30;
+      }
+      &:active {
+        background-color: $warning-40;
+      }
+    }
+    &.DS__btn--destructive {
+      color: $destructive-60;
+      &:hover {
+        background-color: $destructive-30;
+      }
+      &:active {
+        background-color: $destructive-40;
+      }
+    }
+  }
+
+  &__outline {
+    border: 1px solid;
+    background-color: transparent;
+    &.DS__btn--neutral {
+      border-color: $neutral-60;
+      color: $neutral-60;
+    }
+    &.DS__btn--primary {
+      border-color: $primary-60;
+      color: $primary-60;
+    }
+    &.DS__btn--success {
+      border-color: $success-60;
+      color: $success-60;
+    }
+    &.DS__btn--warning {
+      border-color: $warning-60;
+      color: $warning-60;
+    }
+    &.DS__btn--destructive {
+      border-color: $destructive-60;
+      color: $destructive-60;
+    }
+  }
+
+  &__link {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    &.DS__btn--neutral {
+      color: $neutral-60;
+    }
+    &.DS__btn--primary {
+      color: $primary-60;
+    }
+    &.DS__btn--success {
+      color: $success-60;
+    }
+    &.DS__btn--warning {
+      color: $warning-60;
+    }
+    &.DS__btn--destructive {
+      color: $destructive-60;
+    }
+  }
+}
+
+
+.DS__btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+}
+
+.DS__btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.DS__btn__loader {
+  display: inline-block;
+  width: 1em; /* Adjust based on button size */
+  height: 1em;
+  border: 2px solid currentColor; /* Uses button text color */
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: DS__spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes DS__spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+

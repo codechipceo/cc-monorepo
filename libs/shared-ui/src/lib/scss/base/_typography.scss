@@ -42,6 +42,7 @@ $line-height-xs: 0.75rem;
 @mixin typography($size, $line-height: $line-height-md) {
   font-size: $size;
   line-height: $line-height;
+  font-family: $font-primary;
 }
 
 // Font Size

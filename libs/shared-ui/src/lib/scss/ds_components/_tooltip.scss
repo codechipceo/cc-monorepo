@@ -1,0 +1,15 @@
+@use '../index' as *;
+.DS__tooltip__content {
+  max-width: 600px;
+
+  min-width: max-content;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  word-wrap: break-word;
+
+
+  border-radius: 10px;
+  background-color: $neutral-70;
+  color: white;
+}

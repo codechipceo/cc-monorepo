@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Popover>;
 export const Default: Story = {
   args: {
     trigger: <button>Click Me</button>,
-    children: <p>I'm a popover!</p>,
+    content: <p>I'm a popover!</p>,
     showArrow: false,
   },
 };
@@ -27,7 +27,7 @@ export const Tooltip: Story = {
         Hover over me
       </span>
     ),
-    children: <p>I'm a tooltip!</p>,
+    content: <p>I'm a tooltip!</p>,
     triggerOnHover: true, // Hover-based
     showArrow: true,
   },
@@ -37,7 +37,7 @@ export const Tooltip: Story = {
 export const HoverDropdown: Story = {
   args: {
     trigger: <button>Hover Me</button>,
-    children: (
+    content: (
       <div>
         <p>Item 1</p>
         <p>Item 2</p>

@@ -1,24 +1,38 @@
 import * as Popover from '@radix-ui/react-popover';
+import classNames from 'classnames';
 import { ReactNode, useState } from 'react';
+import { Alignment, Side } from './Popover.types';
 
-interface CustomPopoverProps {
+
+interface CustomPopoverProps  {
   trigger: ReactNode;
-  children: ReactNode;
+  content: ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  animate?: boolean;
   showArrow?: boolean;
   triggerOnHover?: boolean;
+  side: Side;
+  align: Alignment;
+  offset?: number;
 }
 
 const CustomPopover = ({
   trigger,
-  children,
+  content,
   open: controlledOpen,
+  side = Side.BOTTOM,
+  align = Alignment.CENTER,
+  offset = 10,
+  animate = false,
   onOpenChange,
-  showArrow = false,
-  triggerOnHover = false, 
+
+  triggerOnHover = false,
 }: CustomPopoverProps) => {
   const [hoverOpen, setHoverOpen] = useState(false);
+  const popoverClass = classNames({
+    'popover-content': animate,
+  });
 
   return (
     <Popover.Root
@@ -39,16 +53,15 @@ const CustomPopover = ({
 
       <Popover.Portal>
         <Popover.Content
-          className="popover-content"
-          side="bottom"
-          align="center"
-          sideOffset={5}
+          className={popoverClass}
+          side={side}
+          align={align}
+          sideOffset={offset}
           collisionPadding={10}
           onMouseEnter={() => triggerOnHover && setHoverOpen(true)}
           onMouseLeave={() => triggerOnHover && setHoverOpen(false)}
         >
-          {children}
-          {showArrow && <Popover.Arrow className="popover-arrow" />}
+          {content}
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>

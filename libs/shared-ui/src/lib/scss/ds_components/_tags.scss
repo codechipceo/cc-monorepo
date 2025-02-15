@@ -1,0 +1,86 @@
+@use '../index' as *;
+
+.tags {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  border: 1px solid;
+  gap: 6px;
+
+  // Variants (color types)
+  &--primary {
+    color: $primary-60;
+    background-color: $primary-10;
+    border-color: $primary-60;
+  }
+
+  &--destructive {
+    color: $destructive-60;
+    background-color: $destructive-10;
+    border-color: $destructive-60;
+  }
+
+  &--success {
+    color: $success-60;
+    background-color: $success-10;
+    border-color: $success-60;
+  }
+
+  &--warning {
+    color: $warning-60;
+    background-color: $warning-10;
+    border-color: $warning-60;
+  }
+
+  &--neutral {
+    color: $neutral-80;
+    background-color: $neutral-10;
+    border-color: $neutral-60;
+  }
+
+  // Shapes
+  &--ellipse {
+    border-radius: 16px;
+  }
+
+  &--rectangle {
+    border-radius: 6px;
+  }
+
+  // Sizes
+  &--small {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  &--medium {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  &--large {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  &__label {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}

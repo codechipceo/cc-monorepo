@@ -10,7 +10,7 @@ button:hover, button:active{
   cursor: pointer;
 }
 button:disabled{
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: not-allowed;
 }
 .DS__btn {
@@ -184,8 +184,13 @@ button:disabled{
     border: 1px solid;
     background-color: transparent;
     &.DS__btn--neutral {
-      border-color: $neutral-60;
-      color: $neutral-60;
+      border-color: $neutral-30;
+      color: $neutral-70;
+      &:hover {
+        border-color: $neutral-40;
+        background-color: $neutral-10;
+      }
+
     }
     &.DS__btn--primary {
       border-color: $primary-60;

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 export interface ToggleButtonProps {
   id?: string;
+  disabled: boolean;
   variant?: 'primary' | 'success' | 'neutral' | 'warning' | 'destructive';
   size?: 'small' | 'medium' ;
   defaultChecked?: boolean;
@@ -17,6 +18,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
   defaultChecked = false,
   onChange,
   ariaLabel = 'Toggle button',
+  disabled =false
 }) => {
   const [checked, setChecked] = useState(defaultChecked);
 
@@ -45,6 +47,7 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
       aria-checked={checked}
       aria-label={ariaLabel}
       className={buttonClasses}
+      disabled={disabled}
       onClick={handleToggle}
     >
       <span className={thumbClasses} />

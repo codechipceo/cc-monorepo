@@ -1,0 +1,52 @@
+@use '../index' as *;
+
+.tabs__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: $neutral-10;
+  border: 2px solid $neutral-20;
+  color: $neutral-50;
+}
+
+.tabs__btn{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: $neutral-10;
+    color: $neutral-50;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+background-color: $primary-10;
+        border: 1px solid $primary-30;
+        color: $primary-70;
+    }
+
+    &--active {
+        background-color: $primary-10;
+        border: 1px solid $primary-30;
+        color: $primary-70;
+    }
+}
+
+.tabs__title--text {
+  color: $neutral-50;
+  font-weight: 500;
+
+  &--active {
+    color: $primary-50;
+    font-weight: 500;
+  }
+}
+
+
+.tabs__badge{
+    margin-left: 2px;
+
+    border: 1px solid $neutral-30;
+    border-radius: 50%;
+    padding: 0px 3px;
+}

@@ -21,7 +21,7 @@
 
 
   &--primary {
-    background-color: #ccc;
+    background-color: $neutral-20;
 
     &.toggle-button--checked {
       background-color: $primary-60;
@@ -29,7 +29,8 @@
   }
 
   &--success {
-    background-color: #ccc;
+    background-color: $neutral-20;
+
 
     &.toggle-button--checked {
       background-color: $success-60;
@@ -37,7 +38,8 @@
   }
 
   &--neutral {
-    background-color: #ccc;
+    background-color: $neutral-20;
+
 
     &.toggle-button--checked {
       background-color: $neutral-60;
@@ -45,7 +47,8 @@
   }
 
   &--warning {
-    background-color: #ccc;
+    background-color: $neutral-20;
+
 
     &.toggle-button--checked {
       background-color: $warning-60;
@@ -53,7 +56,8 @@
   }
 
   &--destructive {
-    background-color: #ccc;
+    background-color: $neutral-20;
+
 
     &.toggle-button--checked {
       background-color: $destructive-60;

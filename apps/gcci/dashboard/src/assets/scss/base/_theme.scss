@@ -1,0 +1,129 @@
+$themes: (
+  "default": (
+    "primary-10": #f4ebff,
+    "primary-20": #e9d7fe,
+    "primary-30": #d6bbfb,
+    "primary-40": #b692f6,
+    "primary-50": #9e77ed,
+    "primary-60": #7f56d9, // Main color
+    "primary-70": #6941c6,
+    "primary-80": #53389e,
+    "primary-90": #42307d,
+    "primary-100": #2c1c5f
+  ),
+  "healthdex": (
+    "primary-10": #e8f5e9,
+    "primary-20": #c8e6c9,
+    "primary-30": #a5d6a7,
+    "primary-40": #81c784,
+    "primary-50": #66bb6a,
+    "primary-60": #4caf50, // Main color
+    "primary-70": #43a047,
+    "primary-80": #388e3c,
+    "primary-90": #2e7d32,
+    "primary-100": #1b5e20
+  ),
+  "buildex": (
+    "primary-10": #e1e4ff,
+    "primary-20": #c3c8ff,
+    "primary-30": #a6acff,
+    "primary-40": #8991ff,
+    "primary-50": #6c75ff,
+    "primary-60": #4f59ff, // Main color
+    "primary-70": #3d48cc,
+    "primary-80": #2b3699,
+    "primary-90": #192466,
+    "primary-100": #071233
+  )
+);
+
+
+// :root {
+//   @each $theme, $colors in $themes {
+//     [data-theme="#{$theme}"] {
+//       @each $key, $value in $colors {
+//         --#{$key}: #{$value};
+//       }
+//     }
+//   }
+// }
+
+// // Use a mixin to avoid repeating the same variable names
+// @mixin define-color-variables($prefix) {
+//   $primary-10: var(--#{$prefix}-10);
+//   $primary-20: var(--#{$prefix}-20);
+//   $primary-30: var(--#{$prefix}-30);
+//   $primary-40: var(--#{$prefix}-40);
+//   $primary-50: var(--#{$prefix}-50);
+//   $primary-60: var(--#{$prefix}-60);
+//   $primary-70: var(--#{$prefix}-70);
+//   $primary-80: var(--#{$prefix}-80);
+//   $primary-90: var(--#{$prefix}-90);
+//   $primary-100: var(--#{$prefix}-100);
+// }
+$white : #FFFFFF;
+$black : #000000;
+
+
+$primary-10: #f4ebff;
+$primary-20: #e9d7fe;
+$primary-30: #d6bbfb;
+$primary-40: #b692f6;
+$primary-50: #9e77ed;
+$primary-60: #7f56d9; // Main color
+$primary-70: #6941c6;
+$primary-80: #53389e;
+$primary-90: #42307d;
+$primary-100: #2c1c5f;
+
+// Destructive/Errors Colors
+$destructive-10: #fee4e2;
+$destructive-20: #fecdca;
+$destructive-30: #fda29b;
+$destructive-40: #f97066;
+$destructive-50: #f04438;
+$destructive-60: #d92d20; // Main Destructive  Color
+$destructive-70: #b42318;
+$destructive-80: #912018;
+$destructive-90: #7a271a;
+$destructive-100:#55160c;
+
+// Success Colors
+$success-10: #dcfae6;
+$success-20: #abefc6;
+$success-30: #75e0a7;
+$success-40: #47cd89;
+$success-50: #17b26a;
+$success-60: #079455; // Main Success Color
+$success-70: #067647;
+$success-80: #085d3a;
+$success-90: #074d31;
+$success-100:#053321;
+
+// Warning Colors
+// until shade 30 use for badges, tags Bg colors
+// from 80 to 100 use as text with light bg with tags and badges
+$warning-10: #fef0c7;
+$warning-20: #fedf89;
+$warning-30: #fec84b;
+$warning-40: #fdb022;
+$warning-50: #f79009;
+$warning-60: #dc6803; // Main Warning Color
+$warning-70: #b54708;
+$warning-80: #93370d;
+$warning-90: #7a2e0e;
+$warning-100:#4e1d09;
+
+// Neutral/Gray Scale
+// Use for text, borders, and disable states for forms and backgrounds
+$neutral-10: #f5f5f5;
+$neutral-20: #E9EAEB;
+$neutral-30: #D5D7DA;
+$neutral-40: #A4A7AE;
+$neutral-50: #717680;
+$neutral-60: #535862; // Main Neutral Color
+$neutral-70: #414651;
+$neutral-80: #252B37;
+$neutral-90: #181D27;
+$neutral-100:#0A0D12;
+

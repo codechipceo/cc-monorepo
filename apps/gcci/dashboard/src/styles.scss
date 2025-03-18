@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/scss/base';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

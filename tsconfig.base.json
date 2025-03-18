@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@codechip/shared-ui": ["libs/shared-ui/src/index.ts"]
+      "@shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@shared-ui/*": ["libs/shared-ui/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

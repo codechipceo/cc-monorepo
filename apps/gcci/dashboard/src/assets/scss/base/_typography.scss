@@ -1,0 +1,95 @@
+/*
+|--------------------------------------------------------------------------
+| Typography Styles
+|--------------------------------------------------------------------------
+| This file defines global typography styles, including font families,
+| weights, sizes, and line heights for consistent text styling
+| throughout the application.
+|
+| @author: Mansab Mir
+| @date:07-02-2025
+| @version: 1.0.0
+|--------------------------------------------------------------------------
+*/
+// @forward './typography';
+
+
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Poppins', sans-serif;
+
+
+// font weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// line height
+$line-height-display-2xl: 5.625rem;
+$line-height-display-xl: 4.5rem;
+$line-height-display-lg: 3.75rem;
+$line-height-display-md: 2.75rem;
+$line-height-display-sm: 1.875rem;
+$line-height-display-xs: 1.5rem;
+$line-height-xl: 1.25rem;
+$line-height-lg: 1.125rem;
+$line-height-md: 1rem;
+$line-height-sm:0.875rem;
+$line-height-xs: 0.75rem;
+
+// Typography Mixins
+@mixin typography($size, $line-height: $line-height-md) {
+  font-size: $size;
+  line-height: $line-height;
+  font-family: $font-primary;
+}
+
+// Font Size
+$font-size-display-2xl: 4.5rem;
+$font-size-display-xl: 3.75rem;
+$font-size-display-lg: 3rem;
+$font-size-display-md: 2.25rem;
+$font-size-display-sm: 1.875rem;
+$font-size-display-xs: 1.5rem;
+
+$font-size-xl: 1.25rem;
+$font-size-lg: 1.125rem;
+$font-size-md: 1rem;
+
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+
+
+// Text Utilities
+.font-display-2xl { @include typography($font-size-display-2xl, $line-height-display-2xl ); }
+.font-display-xl { @include typography($font-size-display-xl,$line-height-display-xl ); }
+.font-display-lg { @include typography($font-size-display-lg, $line-height-display-lg); }
+.font-display-md { @include typography($font-size-display-md, $line-height-display-md); }
+.font-display-sm { @include typography($font-size-display-sm, $line-height-display-sm); }
+.font-display-xs { @include typography($font-size-display-xs, $line-height-display-xs); }
+
+.font-xl { @include typography($font-size-xl, $line-height-xl); }
+.font-lg { @include typography($font-size-lg, $line-height-lg); }
+.font-md { @include typography($font-size-md, $line-height-md); }
+.font-sm { @include typography($font-size-sm, $line-height-sm); }
+.font-xs { @include typography($font-size-xs, $line-height-xs); }
+
+// Font Weights
+.font-light { font-weight: $font-weight-light; }
+.font-regular { font-weight: $font-weight-regular; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// Text Transformations
+.font-uppercase { text-transform: uppercase; }
+.font-lowercase { text-transform: lowercase; }
+.font-capitalize { text-transform: capitalize; }
+
+// Text Alignments
+.font-center { text-align: center; }
+.font-left { text-align: left; }
+.font-right { text-align: right; }
+

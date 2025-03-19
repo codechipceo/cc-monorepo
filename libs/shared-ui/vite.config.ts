@@ -56,5 +56,5 @@ export default defineConfig({
       reportsDirectory: '../../coverage/libs/shared-ui',
       provider: 'v8',
     },
-  },  
+  },
 });

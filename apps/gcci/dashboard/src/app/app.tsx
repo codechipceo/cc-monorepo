@@ -1,9 +1,13 @@
-
+import Sidebar from '../layout/sidebar';
+import './_app.scss';
 export function App() {
-  return (
-    <>
 
-    </>
+  return (
+    <div className="body">
+      <Sidebar />
+
+      <div>page content</div>
+    </div>
   );
 }
 

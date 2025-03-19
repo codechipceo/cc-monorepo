@@ -1,32 +1,40 @@
-import { SidebarItem } from "./sidebar.types";
-import { House, LayoutDashboard, TextQuote, ChevronsDown } from 'lucide-react';
+import { SidebarItem } from './sidebar.types';
+import {
+  LayoutDashboard,
+  TextQuote,
+  ChevronsDown,
+  Container,
+  UserRoundPlus,
+} from 'lucide-react';
 
 export const sidebarRoutes: SidebarItem[] = [
-  { label: 'Home', to: '/', id: '1', icon: <House fill="none" /> },
   {
     label: 'Dashboard',
     to: '/dashboard',
     id: '2',
     icon: <LayoutDashboard fill="none" />,
   },
+  { label: 'Quotations', to: '/', id: '1', icon: <TextQuote fill="none" /> },
   {
-    label: 'Create',
+    label: 'Shipments',
     id: '3',
     to: '/fd',
-    icon: <TextQuote fill="none" />,
+    icon: <Container fill="none" />,
     children: [
-      { label: 'Folder', to: '/create/folder', id: '3-1', icon: <ChevronsDown fill="none" /> },
+      {
+        label: 'Folder',
+        to: '/create/folder',
+        id: '3-1',
+        icon: <ChevronsDown fill="none" />,
+      },
       { label: 'Document', to: '/create/document', id: '3-2' },
       { label: 'Project', to: '/create/project', id: '3-3' },
     ],
   },
   {
-    label: 'Todo-Lists',
+    label: 'Employees',
     id: '4',
     to: '',
-    children: [
-      { label: 'Work', to: '/todos/work', id: '4-1' },
-      { label: 'Private', to: '/todos/private', id: '4-2' },
-    ],
+    icon: <UserRoundPlus />,
   },
 ];

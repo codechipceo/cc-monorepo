@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { SidebarProps } from '../sidebar.types';
 import Logo from './Logo';
 import Routes from './SidebarRoutes';
+import Footer from './SidebarFooter';
+import Separator from './Separator';
 
 const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   /*
@@ -46,22 +48,18 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
       setParentLinkId(foundParentId);
       setChildLinkId('');
     }
-    };
-     const handleParentLink = (parentId: string) => {
-       setParentLinkId(parentId);
-     };
+  };
+  const handleParentLink = (parentId: string) => {
+    setParentLinkId(parentId);
+  };
 
-     const handleChildLink = (childId: string) => {
-       setChildLinkId(childId);
-    };
-
-
-    
+  const handleChildLink = (childId: string) => {
+    setChildLinkId(childId);
+  };
 
   useEffect(() => {
     updateActiveLinks();
   }, []);
-
 
   const sidebarClasses = {
     sidebarToggleClass: isSidebarOpen === false ? 'close' : '',
@@ -69,13 +67,14 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   };
 
   return (
-    <nav id="sidebar" className={sidebarClasses.sidebarToggleClass}>
+    <nav id="sidebar" className={`font-md  ${sidebarClasses.sidebarToggleClass}`}>
       <ul style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <Logo
           sidebarClasses={sidebarClasses}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
+        <Separator label="Main Menu" />
         <Routes
           items={items}
           parentLinkId={parentLinkId}
@@ -83,7 +82,11 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
           handleParentLink={handleParentLink}
           handleChildLink={handleChildLink}
         />
-        {/* <Footer /> */}
+
+
+        <div className="sidebar__footer">
+          <Footer />
+        </div>
       </ul>
     </nav>
   );

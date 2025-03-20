@@ -1,0 +1,148 @@
+@use '../index' as *;
+
+.textField__wrapper {
+  display: inline-block;
+  width: 360px;
+
+  &--fullwidth {
+    width: 100%;
+  }
+}
+
+.textField__input-container {
+  position: relative;
+  width: 100%;
+}
+
+.textField__label {
+  display: block;
+  color: $neutral-70;
+  margin-bottom: 0.25em;
+
+  &--error {
+    color: $destructive-50;
+  }
+}
+.label__required {
+  color: $destructive-50;
+}
+
+.textField__input-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  svg {
+    stroke: $neutral-60;
+    stroke-width: 1;
+  }
+}
+.textField__input {
+  flex: 1;
+  box-sizing: border-box;
+  height: 32px;
+  border-radius: 0.5em;
+  outline: none;
+  border: 1px solid $neutral-30;
+  color: $neutral-80;
+  font-weight: 400;
+  font-size: 14px;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  // Hover state
+  &:hover {
+    border-color: $neutral-80;
+    background-color: $neutral-10;
+  }
+
+  // Focus and Active states
+  &:focus-visible,
+  &:focus,
+  &:focus-within,
+  &:active {
+    border: 2px solid $primary-60;
+    background-color: $primary-10;
+  }
+
+  // Placeholder styling
+  &::placeholder {
+    color: $neutral-50;
+  }
+
+  // Disabled state
+  &.textField__input--disabled {
+    cursor: not-allowed;
+    color: $neutral-10;
+    background-color: $neutral-30;
+
+    &:hover,
+    &:focus-visible,
+    &:focus,
+    &:focus-within,
+    &:active {
+      background-color: $neutral-30;
+      border: 1px solid $neutral-30; // Ensures the border doesn't change on interaction
+    }
+  }
+
+  // Prefix padding
+  &.textField__input--prefix {
+    padding-left: 30px;
+  }
+
+  // Suffix padding
+  &.textField__input--suffix {
+    padding-right: 30px;
+  }
+
+  &.textField__input--error {
+    border: 1px solid $destructive-50;
+  }
+
+  // Full width variant
+  &.textField__input--fullwidth {
+    width: 100%;
+  }
+}
+
+.textField__suffix {
+  cursor: pointer;
+}
+
+.textField__prefix,
+.textField__suffix,
+.textField__clear-button {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.textField__prefix {
+  left: 8px;
+}
+
+.textField__suffix {
+  right: 8px;
+}
+
+.textField__clear-button {
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.textField__helper-text,
+.textField__error-text {
+  font-size: 0.8rem;
+}
+
+.textField__error-text {
+  color: $destructive-50;
+}
+
+.textField__helper-text {
+  font-size: 12px;
+  color: $neutral-50;
+}

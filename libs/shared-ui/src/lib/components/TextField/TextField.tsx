@@ -49,8 +49,8 @@ const HeadlessInputField: React.FC<HeadlessInputFieldProps> = ({
   };
 
   const textFieldInput = classNames('textField__input', 'font-sm', {
-    'textField__input--prefix': prefixIcon && true,
-    'textField__input--suffix': suffixIcon && true,
+    'textField__input--prefix': !!prefixIcon ,
+    'textField__input--suffix': !!suffixIcon ,
     'textField__input--disabled': rest.disabled,
     'textField__input--error': isError,
   });

@@ -106,6 +106,7 @@
 
 .textField__suffix {
   cursor: pointer;
+  right: 8px;
 }
 
 .textField__prefix,
@@ -122,9 +123,6 @@
   left: 8px;
 }
 
-.textField__suffix {
-  right: 8px;
-}
 
 .textField__clear-button {
   right: 10px;
